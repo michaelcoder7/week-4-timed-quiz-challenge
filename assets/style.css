@@ -1,0 +1,47 @@
+:root {
+  --main-bg-color: #b8bbdb;
+  --button-color: #4b54b8;
+  --heading-color: #060500;
+  --main-text-color: #060500;
+  --second-text-color: #bdc9c8;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Times New Roman", Times, serif;
+  height: 1vh;
+}
+
+header {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+}
+
+div {
+  color: var(--main-bg-color);
+}
+
+a {
+  color: var(--second-text-color);
+  text-decoration: none;
+}
+
+#timer,
+#highscores {
+  background-color: var(--button-color);
+  padding: 16px;
+  border-radius: 25px;
+}
