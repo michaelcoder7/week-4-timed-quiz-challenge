@@ -45,3 +45,13 @@ a {
   padding: 16px;
   border-radius: 25px;
 }
+
+button {
+  background-color: var(--button-color);
+  padding: 16px;
+  border-radius: 25px;
+}
+
+input {
+  text-align: center;
+}
