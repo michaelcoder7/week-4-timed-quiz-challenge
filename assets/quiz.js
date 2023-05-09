@@ -116,3 +116,8 @@ function onStartGame() {
 
   displayQuestion();
 }
+
+startQuiz.addEventListener("click", onStartGame);
+saveScore.addEventListener("click", onSaveScore);
+viewScores.addEventListener("click", onViewScores);
+playAgain.addEventListener("click", onStartGame);
