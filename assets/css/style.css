@@ -4,6 +4,7 @@
   --heading-color: #060500;
   --main-text-color: #060500;
   --second-text-color: #bdc9c8;
+  --message-color: #f31008;
 }
 
 body {
@@ -44,6 +45,18 @@ a {
   background-color: var(--button-color);
   padding: 16px;
   border-radius: 25px;
+}
+
+#quiz {
+  background-color: var(--heading-color);
+}
+
+#message {
+  background-color: var(--message-color);
+}
+.option:hover {
+  background-color: var(--second-text-color);
+  color: var(--main-text-color);
 }
 
 button {

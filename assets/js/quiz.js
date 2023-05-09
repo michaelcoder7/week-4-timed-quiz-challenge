@@ -78,7 +78,7 @@ function displayQuestion() {
     return;
   }
 
-  let question = questions(currentQuestion);
+  let question = questions[currentQuestion];
   document.getElementById("question").textContent = question.title;
 
   options.innerHTML = "";
