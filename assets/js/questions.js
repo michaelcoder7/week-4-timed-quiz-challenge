@@ -6,6 +6,17 @@ var questions = [
     answer: "alerts",
   },
   {
+    title: "Which of the following are commonly used in JavaScript?",
+    choices: ["if statements", "while loops", "for loops", "all of the above"],
+    answer: "all of the above",
+  },
+  {
+    title:
+      "Arrays in JavaScript are usually enclosed within which of the following?",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "square brackets",
+  },
+  {
     title: "The condition in an if / else statement is enclosed within ____.",
     choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
     answer: "parentheses",
