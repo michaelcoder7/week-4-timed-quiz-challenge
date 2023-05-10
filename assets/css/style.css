@@ -36,19 +36,37 @@ div {
 }
 
 a {
-  color: var(--second-text-color);
+  color: var(--main-text-color);
   text-decoration: none;
 }
 
-#timer,
+#timer {
+  background-color: var(--button-color);
+  padding: 16px;
+  border-radius: 25px;
+  color: var(--main-text-color);
+  width: 50px;
+}
+
+#welcome {
+  color: var(--main-text-color);
+  margin-bottom: 20px;
+}
+
 #highscores {
   background-color: var(--button-color);
   padding: 16px;
   border-radius: 25px;
+  color: var(--main-text-color);
 }
 
 #quiz {
   background-color: var(--heading-color);
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 12px;
+  border-radius: 25px;
 }
 
 #message {
@@ -67,4 +85,24 @@ button {
 
 input {
   text-align: center;
+}
+
+#summary {
+  background-color: var(--message-color);
+  color: var(--second-text-color);
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.result {
+  background-color: var(--heading-color);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.result.score-item {
+  color: var(--second-text-color);
 }

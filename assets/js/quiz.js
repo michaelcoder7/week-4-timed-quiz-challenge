@@ -1,7 +1,7 @@
-let startQuiz = document.getElementById("startQuiz");
-let saveScore = document.getElementById("saveScore");
-let viewScores = document.getElementById("viewScores");
-let playAgain = document.getElementById("playAgain");
+let beginQuiz = document.getElementById("startQuiz");
+let savetheScore = document.getElementById("saveScore");
+let viewtheScores = document.getElementById("viewScores");
+let playgameAgain = document.getElementById("playAgain");
 
 let welcome = document.getElementById("welcome");
 let quiz = document.getElementById("quiz");
@@ -19,53 +19,28 @@ let score = 0;
 let currentQuestion = 0;
 let countdownTimer;
 
-function stopGame() {
-  clearInterval(countdownTimer);
+function onStartGame() {
+  secondsLeft = 75;
 
-  timer.textontent = "";
+  currentQuestion = 0;
 
-  quiz.style.display = "none";
-  result.style.display = "flex";
+  score = 0;
 
-  summary.textContent = "Your Score is: " + score;
-}
+  countdownTimer = setInterval(function () {
+    if (secondsLeft > 0) {
+      timer.textContent = secondsLeft;
+    } else {
+      stopGame();
+    }
 
-function onSaveScore(e) {
-  let initials = document.getElementById("initials").value;
+    secondsLeft--;
+  }, 1000);
 
-  if (initials !== "") {
-    localStorage.setItem(initials, score);
-
-    document.getElementById("initials").value = "";
-  }
-}
-
-function onViewScores(e) {
-  window.localStorage.href = "scores.html";
-}
-
-function onSelectAnswer(e) {
-  let correctAnswer = questions[currentQuestion].answer;
-  let userAnswer = e.target.textContent;
-
-  if (correctAnswer === userAnswer) {
-    score++;
-
-    displayMessage("Correct!");
-  } else {
-    score--;
-    displayMessage("Wrong :-<");
-  }
+  welcome.style.display = "none";
+  result.style.display = "none";
+  quiz.style.display = "flex";
 
   displayQuestion();
-}
-
-function displayMessage(msg) {
-  message.textContent = msg;
-
-  setTimeout(function () {
-    message.textContent = " ";
-  }, 1000);
 }
 
 function displayQuestion() {
@@ -93,31 +68,56 @@ function displayQuestion() {
   }
 }
 
-function onStartGame() {
-  secondsLeft = 75;
+function onSelectAnswer(e) {
+  let correctAnswer = questions[currentQuestion].answer;
+  let userAnswer = e.target.textContent;
 
-  currentQuestion = 0;
+  if (correctAnswer === userAnswer) {
+    score++;
 
-  score = 0;
-
-  countdownTimer = setInterval(function () {
-    if (secondsLeft > 0) {
-      timer.textContent = secondsLeft;
-    } else {
-      stopGame();
-    }
-
-    secondsLeft--;
-  }, 1000);
-
-  welcome.style.display = "none";
-  result.style.display = "none";
-  quiz.style.display = "flex";
+    displayMessage("Correct!");
+  } else {
+    score--;
+    displayMessage("Wrong :-<");
+  }
 
   displayQuestion();
 }
 
-startQuiz.addEventListener("click", onStartGame);
-saveScore.addEventListener("click", onSaveScore);
-viewScores.addEventListener("click", onViewScores);
-playAgain.addEventListener("click", onStartGame);
+function stopGame() {
+  clearInterval(countdownTimer);
+
+  timer.textontent = "";
+
+  quiz.style.display = "none";
+  result.style.display = "flex";
+
+  summary.textContent = "Your Score is: " + score;
+}
+
+function onSaveScore(e) {
+  let initials = document.getElementById("initials").value;
+
+  if (initials !== "") {
+    localStorage.setItem(initials, score);
+
+    document.getElementById("initials").value = "";
+  }
+}
+
+function onViewScores(e) {
+  window.localStorage.href = "scores.html";
+}
+
+function displayMessage(msg) {
+  message.textContent = msg;
+
+  setTimeout(function () {
+    message.textContent = " ";
+  }, 1000);
+}
+
+beginQuiz.addEventListener("click", onStartGame);
+savetheScore.addEventListener("click", onSaveScore);
+viewtheScores.addEventListener("click", onViewScores);
+playgameAgain.addEventListener("click", onStartGame);
