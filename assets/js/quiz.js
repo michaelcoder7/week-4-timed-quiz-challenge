@@ -1,3 +1,5 @@
+// Layout of Important Variables for the game to run
+
 let beginQuiz = document.getElementById("startQuiz");
 let savetheScore = document.getElementById("saveScore");
 let viewtheScores = document.getElementById("viewScores");
@@ -19,7 +21,11 @@ let score = 0;
 let currentQuestion = 0;
 let countdownTimer;
 
+// function for the game to start
+
 function onStartGame() {
+  // timer set at 75 seconds
+
   secondsLeft = 75;
 
   currentQuestion = 0;
@@ -30,23 +36,31 @@ function onStartGame() {
     if (secondsLeft > 0) {
       timer.textContent = secondsLeft;
     } else {
+      // stops the timer and ends game
       stopGame();
     }
 
     secondsLeft--;
   }, 1000);
 
+  // to hide the welcome section
   welcome.style.display = "none";
   result.style.display = "none";
   quiz.style.display = "flex";
 
+  // to display first question
   displayQuestion();
 }
 
+//function for displaying question
+
 function displayQuestion() {
+  // Increment to get next question
   currentQuestion++;
 
   console.log("current question is " + currentQuestion);
+
+  // If the questions have run out
 
   if (currentQuestion >= questions.length) {
     stopGame();
@@ -58,6 +72,8 @@ function displayQuestion() {
 
   options.innerHTML = "";
 
+  // to load the choices and output the new possible options
+
   for (let i = 0; i < question.choices.length; i++) {
     let option = document.createElement("div");
     option.textContent = question.choices[i];
@@ -67,6 +83,8 @@ function displayQuestion() {
     options.appendChild(option);
   }
 }
+
+// function for answer selection
 
 function onSelectAnswer(e) {
   let correctAnswer = questions[currentQuestion].answer;
@@ -81,8 +99,11 @@ function onSelectAnswer(e) {
     displayMessage("Wrong :-<");
   }
 
+  // calls up the next question
   displayQuestion();
 }
+
+// function to stop game
 
 function stopGame() {
   clearInterval(countdownTimer);
@@ -95,6 +116,8 @@ function stopGame() {
   summary.textContent = "Your Score is: " + score;
 }
 
+// function to save scores and initials
+
 function onSaveScore(e) {
   let initials = document.getElementById("initials").value;
 
@@ -104,11 +127,12 @@ function onSaveScore(e) {
     document.getElementById("initials").value = "";
   }
 }
-
+// function to view scores
 function onViewScores(e) {
   window.localStorage.href = "scores.html";
 }
 
+// function for displaying message regarding scores
 function displayMessage(msg) {
   message.textContent = msg;
 
