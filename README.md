@@ -34,6 +34,8 @@ Accompanying JavaScript file was also created to run the quiz application
 
 Additional 'scores' html and js files were created inorder to house a seperate page displaying the high scores when button is clicked from the main page
 
-## Screenshot of password generator web application
+## Screenshot of quiz web application
 
 ## Link to deployed Function
+
+https://michaelcoder7.github.io/week-4-timed-quiz-challenge/
