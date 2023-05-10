@@ -108,7 +108,7 @@ function onSelectAnswer(e) {
 function stopGame() {
   clearInterval(countdownTimer);
 
-  timer.textontent = "";
+  timer.textContent = "";
 
   quiz.style.display = "none";
   result.style.display = "flex";
