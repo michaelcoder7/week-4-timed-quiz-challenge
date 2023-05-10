@@ -36,4 +36,6 @@ Additional 'scores' html and js files were created inorder to house a seperate p
 
 ## Screenshot of password generator web application
 
+<img width="1255" alt="quiz-website" src="https://github.com/michaelcoder7/week-4-timed-quiz-challenge/assets/128432461/77015313-3cc1-4062-b62c-89b5c9614057">
+
 ## Link to deployed Function
