@@ -23,3 +23,17 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+
+## Activities carried out
+
+Main html file was created with accompanying code to create the frame of the website
+
+Accompanying CSS file was also created to add style to the html file
+
+Accompanying JavaScript file was also created to run the quiz application
+
+Additional 'scores' html and js files were created inorder to house a seperate page displaying the high scores when button is clicked from the main page
+
+## Screenshot of password generator web application
+
+## Link to deployed Function
